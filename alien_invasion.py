@@ -27,10 +27,10 @@ class AlienInvasion:
         
         pygame.mixer.init()
         self.laser_sound = pygame.mixer.Sound(self.settings.laser_sound)
-        self.laser_sound.set_volume(0.5)
+        self.laser_sound.set_volume(0.8)
         
         self.impact_sound = pygame.mixer.Sound(self.settings.impact_sound)
-        self.impact_sound.set_volume(0.5)
+        self.impact_sound.set_volume(0.8)       
 
         self.ship = Ship(self, ShipArsenal(self))
         self.alien_fleet = AlienFleet(self)
@@ -129,7 +129,7 @@ class AlienInvasion:
         elif event.key == pygame.K_SPACE:
             if self.ship.fire():
                self.laser_sound.play()
-               self.laser_sound.fadeout(250)
+               self.laser_sound.fadeout(500)
         elif event.key == pygame.K_q:
             self.running = False
             pygame.quit()
