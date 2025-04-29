@@ -1,5 +1,6 @@
 
 import pygame
+import random
 from alien import Alien
 from typing import TYPE_CHECKING
 
@@ -45,10 +46,10 @@ class AlienFleet:
         fleet_w, fleet_h = self.calculate_fleet_size(alien_w, screen_w, alien_h, screen_h)        
         x_offset, y_offset = self.calculate_offsets(alien_w, alien_h, screen_w, fleet_w, fleet_h)
         
-        self._create_rectangle_fleet(alien_w, alien_h, fleet_w, fleet_h, x_offset, y_offset)
+        self._create_random_fleet(alien_w, alien_h, fleet_w, fleet_h, x_offset, y_offset)
         
 
-    def _create_rectangle_fleet(self, alien_w, alien_h, fleet_w, fleet_h, x_offset, y_offset):
+    def _create_random_fleet(self, alien_w, alien_h, fleet_w, fleet_h, x_offset, y_offset):
         """
         Create a rectangle fleet of aliens.
         The fleet is arranged in rows and columns, with a specified offset for positioning.
@@ -61,13 +62,16 @@ class AlienFleet:
             x_offset (int): offset for the x position of the fleet
             y_offset (int): offset for the y position of the fleet
         """
-        for row in range(fleet_h):            
-            for col in range(fleet_w):
-                current_x = (alien_w * col) + x_offset
-                current_y = (alien_h * row) + y_offset
-                if col % 2 == 0 or row % 2 == 0:
+        spawn_chance = 5 # Chance of spawning an alien in a given position
+        
+        for row in range(fleet_h):
+            for column in range(fleet_w):
+                if random.randint(0,100) < spawn_chance:                    
+                    current_x = x_offset + (column * alien_w)
+                    current_y = y_offset + (row * alien_h)
+                    self._create_alien(current_x, current_y)
+                else:
                     continue
-                self._create_alien(current_x, current_y)
                 
 
     def calculate_offsets(self, alien_w, alien_h, screen_w, fleet_w, fleet_h):
@@ -219,7 +223,6 @@ class AlienFleet:
 
         Returns:
             bool: True if the fleet is empty, False otherwise.
-        If the fleet is empty, it means all aliens have been destroyed.
         """
         return not self.fleet
     
