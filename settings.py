@@ -16,9 +16,19 @@ class Settings:
         self.FPS = 60
         
         # Initialize the game background
+        """
+        self.bg_file source:
+        Source URL: https://www.pexels.com/photo/space-background-11657224/
+        filename: pexels-photo-11657224.jpeg
+        """
         self.bg_file = Path.cwd() / "Assets" / "images" / "pexels-photo-11657224.png"
         
         # Initialize the game ship settings - the player's ship
+        """
+        self.ship_file source:
+        Source URL: https://www.hiclipart.com/free-transparent-background-png-clipart-okdip
+        original filename: starship-enterprise-harley-benton-television-fan-art-star-trek.jpg
+        """
         self.ship_file = Path.cwd() / "Assets" / "images" / "starship(nobg).png"
         self.ship_w = 40
         self.ship_h = 60
@@ -33,6 +43,12 @@ class Settings:
         self.bullets_amount = 5
         
         # Initialize the game alien settings - the enemy ship
+        """
+        self.alien_file source:
+        Source URL: https://www.pinterest.com/pin/klingon-bird-of-prey-token-by-thebalzan--527343437621168351/
+        original filename: klingon-bird-of-prey-token-by-thebalzan.jpg
+        """
+
         self.alien_file = Path.cwd() / "Assets" / "images" / "enemy_ship_nobg.png"
         self.alien_w = 40
         self.alien_h = 40
@@ -41,8 +57,17 @@ class Settings:
         self.fleet_drop_speed = 40
         
         # Initialize the game sound settings
-        self.laser_sound = Path.cwd() / "Assets" / "sound" / "sci-fi-weapon-laser-shot-04-316416.mp3"
-        self.impact_sound = Path.cwd() / "Assets" / "sound" / "explosion-312361.mp3"
+        """
+        self.laser_sound source:
+        Source URL: https://pixabay.com/sound-effects/search/laser/
+        filename: laser-zap-90575.mp3
+        
+        self.impact_sound source:
+        Source URL: https://pixabay.com/sound-effects/search/explosion/
+        filename: explosion-312361.mp3
+        """
+        self.laser_sound = Path.cwd() / "Assets" / "sound" / "laser-zap-90575.mp3" # Ship firing sound                
+        self.impact_sound = Path.cwd() / "Assets" / "sound" / "explosion-312361.mp3" # Impact sound for bullets hitting aliens
         
         
         
