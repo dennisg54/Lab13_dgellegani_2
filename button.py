@@ -7,6 +7,14 @@ if TYPE_CHECKING:
 class Button:
     
     def __init__(self, game: 'AlienInvasion', msg) -> None:
+        """
+        Initialize the button's attributes.
+        This method sets the button's position, size, color, and font.
+
+        Args:
+            game (AlienInvasion): The game instance.
+            msg (str): The message to be displayed on the button.           
+        """
         self.game = game
         self.screen = game.screen
         self.boundaries = game.screen.get_rect()

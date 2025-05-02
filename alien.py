@@ -63,6 +63,5 @@ class Alien(Sprite):
         """
         Draw the alien on the screen at its current position.
         """
-        
         self.screen.blit(self.image, self.rect)
         
