@@ -69,5 +69,19 @@ class Settings:
         self.laser_sound = Path.cwd() / "Assets" / "sound" / "laser-zap-90575.mp3" # Ship firing sound                
         self.impact_sound = Path.cwd() / "Assets" / "sound" / "explosion-312361.mp3" # Impact sound for bullets hitting aliens
         
+        self.button.w = 200
+        self.button.h = 50
+        self.button.color = (116, 152, 242)
+        
+        """
+        Source URL: https://fonts.google.com/selection?categoryFilters=Appearance:%2FTheme%2FTechno
+        filename: Audiowide
+        """
+        self.button.text_color = (255, 255, 255)
+        self.button.font_size = 48
+        self.HUD_font_size = 25
+        self.font_file = Path.cwd() / "Assets" / "Fonts" / "Audiowide" / "Audiowide-Regular.ttf"
+        self.button.font_bold = True
+        
         
         
